@@ -15,4 +15,9 @@ class Absen extends Model
         'tanggal',
         'code'
     ];
+
+    public function detail()
+    {
+        return $this->hasMany(AbsenDetail::class, 'absen_id')->orderBy('id', 'ASC');
+    }
 }

@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
+
+Route::group(['prefix' => 'profile', 'middleware' => 'auth:api'], function () {
+    Route::get('/', [\App\Http\Controllers\Api\AbsensiController::class, 'index']);
+});
+
+Route::group(['prefix' => 'absen', 'middleware' => 'auth:api'], function () {
+    Route::match(['post', 'get'], '/', [\App\Http\Controllers\Api\AbsensiController::class, 'index']);
 });
