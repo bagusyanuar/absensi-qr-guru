@@ -34,7 +34,7 @@ class AbsensiController extends CustomController
                     ->where('user_id', '=', Auth::id())
                     ->first();
                 if ($is_exists) {
-                    if ($is_exists->pulang !== null) {
+                    if ($is_exists->pulang === null) {
                         $is_exists->update([
                             'pulang' => Carbon::now('Asia/Jakarta'),
                         ]);

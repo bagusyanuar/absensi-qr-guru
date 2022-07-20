@@ -14,9 +14,8 @@ class AbsenDetail extends Model
     protected $fillable = [
         'absen_id',
         'user_id',
-        'waktu',
-        'tipe',
-        'keterangan'
+        'masuk',
+        'pulang',
     ];
 
     public function absen()
