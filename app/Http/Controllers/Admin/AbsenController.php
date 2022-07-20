@@ -40,6 +40,12 @@ class AbsenController extends CustomController
                 'tanggal' => $this->postField('tanggal'),
                 'code' => $code,
             ];
+
+            $is_exists = Absen::where('tanggal', '=', $this->postField('tanggal'))
+                ->first();
+            if ($is_exists) {
+                return redirect()->back()->with(['failed' => 'tanggal absen sudah dibuat']);
+            }
             QrCode::size(500)
                 ->format('png')
                 ->generate($code, public_path('assets/qr/' . $code . '.png'));

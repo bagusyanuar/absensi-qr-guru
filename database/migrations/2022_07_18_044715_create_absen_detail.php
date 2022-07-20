@@ -17,9 +17,8 @@ class CreateAbsenDetail extends Migration
             $table->id();
             $table->bigInteger('absen_id')->unsigned();
             $table->bigInteger('user_id')->unsigned();
-            $table->time('waktu');
-            $table->string('tipe');
-            $table->text('keterangan')->default('');
+            $table->time('masuk');
+            $table->time('pulang')->nullable();
             $table->timestamps();
             $table->foreign('absen_id')->references('id')->on('absen');
             $table->foreign('user_id')->references('id')->on('users');
