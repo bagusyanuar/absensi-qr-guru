@@ -44,3 +44,7 @@ Route::group(['prefix' => 'absen'], function () {
     Route::post( '/delete', [\App\Http\Controllers\Admin\AbsenController::class, 'destroy']);
 });
 
+Route::group(['prefix' => 'lokasi'], function () {
+    Route::match(['post', 'get'], '/', [\App\Http\Controllers\Admin\LokasiController::class, 'index']);
+});
+

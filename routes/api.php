@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
+Route::get('/lokasi', [\App\Http\Controllers\Admin\LokasiController::class, 'data']);
 
 Route::group(['prefix' => 'profile', 'middleware' => 'auth:api'], function () {
     Route::get('/', [\App\Http\Controllers\Api\AbsensiController::class, 'index']);

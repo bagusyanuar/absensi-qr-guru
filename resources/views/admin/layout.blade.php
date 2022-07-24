@@ -97,6 +97,13 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a href="/guru"
+                           class="nav-link">
+                            <i class="fa fa-gear nav-icon" aria-hidden="true"></i>
+                            <p>Seting Lokasi</p>
+                        </a>
+                    </li>
                 </nav>
             </ul>
         </div>
