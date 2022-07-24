@@ -104,6 +104,13 @@
                             <p>Seting Lokasi</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/laporan-absen"
+                           class="nav-link">
+                            <i class="fa fa-bar-chart nav-icon" aria-hidden="true"></i>
+                            <p>Laporan Absen</p>
+                        </a>
+                    </li>
                 </nav>
             </ul>
         </div>

@@ -48,3 +48,9 @@ Route::group(['prefix' => 'lokasi'], function () {
     Route::match(['post', 'get'], '/', [\App\Http\Controllers\Admin\LokasiController::class, 'index']);
 });
 
+Route::group(['prefix' => 'laporan-absen'], function () {
+    Route::get( '/', [\App\Http\Controllers\Admin\LaporanController::class, 'laporan_absen']);
+    Route::get( '/data', [\App\Http\Controllers\Admin\LaporanController::class, 'laporan_absen_data']);
+    Route::get( '/cetak', [\App\Http\Controllers\Admin\LaporanController::class, 'laporan_absen_cetak']);
+});
+
