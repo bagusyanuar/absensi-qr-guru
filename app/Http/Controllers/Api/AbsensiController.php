@@ -60,6 +60,17 @@ class AbsensiController extends CustomController
         } catch (\Exception $e) {
             return $this->jsonResponse('terjadi kesalahan ' . $e->getMessage(), 500);
         }
+    }
 
+    public function data()
+    {
+        try {
+            $data = AbsenDetail::with('absen')
+                ->where('user_id', '=', Auth::id())
+                ->get();
+            return $this->jsonResponse('success', 200, $data);
+        }catch (\Exception $e) {
+            return $this->jsonResponse('terjadi kesalahan ' . $e->getMessage(), 500);
+        }
     }
 }

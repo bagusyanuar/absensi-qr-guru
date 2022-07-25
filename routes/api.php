@@ -27,4 +27,5 @@ Route::group(['prefix' => 'profile', 'middleware' => 'auth:api'], function () {
 
 Route::group(['prefix' => 'absen', 'middleware' => 'auth:api'], function () {
     Route::match(['post', 'get'], '/', [\App\Http\Controllers\Api\AbsensiController::class, 'index']);
+    Route::get( '/data', [\App\Http\Controllers\Api\AbsensiController::class, 'data']);
 });
